@@ -53,7 +53,7 @@ function changePriorityIF(prio, urgent, medium, low) {
 }
 
 
-function filterContactsForAddTaskIF(i, value,contactList, checkContact) {
+function filterContactsForAddTaskIF(i, value, contactList, checkContact) {
     if (checkContact.includes(value)) {
         let contact = contactList[i].name;
         const name = contact.split(" ");
@@ -190,7 +190,7 @@ function focusSubtaskHTML(i) {
  * @returns {Promise<void>}
  */
 async function deleteAllTasksEmergencyFunction() {
-    tasks = JSON.parse(await getItem('tasks'));
+    // tasks = JSON.parse(await getItem('tasks'));
     console.log(tasks);
     tasks = [];
     await setItem('tasks', JSON.stringify(tasks));
@@ -198,18 +198,17 @@ async function deleteAllTasksEmergencyFunction() {
     console.log(test);
 }
 
-
 async function addExampleTasks() {
-    tasks = JSON.parse(await getItem('tasks'));
+    // tasks = JSON.parse(await getItem('tasks'));
     console.log(tasks);
-    tasks = [
+    tasks = tasks = [
         {
             "id": 0,
             "title": "Entwicklung neuer Website-Features",
             "description": "Implementierung von zusätzlichen Funktionen auf der Unternehmenswebsite",
             "contacts": [
-                "Emmanuel Mauer",
-                "Tim Testing"
+                "Emily Davis",
+                "Mohammed Ali"
             ],
             "dueDate": "2024-05-01",
             "priority": "low",
@@ -235,9 +234,9 @@ async function addExampleTasks() {
             "title": "Benutzeroberfläche für Mobile App gestalten",
             "description": "Design der Benutzeroberfläche für die mobile Anwendung",
             "contacts": [
-                "Benedikt Ziegler",
-                "Anton Mayer",
-                "David Eisenberg"
+                "Sophia Rossi",
+                "Chen Wei",
+                "Luca Ferrari"
             ],
             "dueDate": "2024-05-05",
             "priority": "medium",
@@ -259,10 +258,10 @@ async function addExampleTasks() {
             "title": "Integration von Zahlungsgateways",
             "description": "Implementierung von Zahlungsoptionen in die Anwendung",
             "contacts": [
-                "Eva Fischer",
-                "Tim Testing",
-                "David Eisenberg",
-                "Benedikt Ziegler"
+                "Hannah Kim",
+                "Mikhail Ivanov",
+                "Isabella Martinez",
+                "Eva Schmidt"
             ],
             "dueDate": "2024-05-10",
             "priority": "urgent",
@@ -284,8 +283,8 @@ async function addExampleTasks() {
             "title": "Verbesserung der Suchfunktion",
             "description": "Optimierung der Suchfunktion auf der Website",
             "contacts": [
-                "Benedikt Ziegler",
-                "Anton Mayer"
+                "Sophia Rossi",
+                "Chen Wei"
             ],
             "dueDate": "2024-05-15",
             "priority": "medium",
@@ -307,9 +306,9 @@ async function addExampleTasks() {
             "title": "Entwicklung eines CSS-Frameworks",
             "description": "Erstellung eines benutzerdefinierten CSS-Frameworks für das Projekt",
             "contacts": [
-                "David Eisenberg",
-                "Benedikt Ziegler",
-                "Eva Fischer"
+                "Ava Garcia",
+                "Ethan Lee",
+                "Charlotte Kim"
             ],
             "dueDate": "2024-05-20",
             "priority": "medium",
@@ -331,7 +330,7 @@ async function addExampleTasks() {
             "title": "Durchführung von Systemtests",
             "description": "Tests der Anwendung auf verschiedene Systemkonfigurationen",
             "contacts": [
-                "Emmanuel Mauer"
+                "Emily Davis"
             ],
             "dueDate": "2024-05-25",
             "priority": "urgent",
@@ -353,9 +352,9 @@ async function addExampleTasks() {
             "title": "Implementierung von Datenbankmigrationen",
             "description": "Aktualisierung der Datenbankstruktur gemäß den neuen Anforderungen",
             "contacts": [
-                "Marcel Bauer",
-                "Anton Mayer",
-                "Benedikt Ziegler"
+                "Liam Brown",
+                "Charlotte Kim",
+                "Mikhail Ivanov"
             ],
             "dueDate": "2024-05-30",
             "priority": "urgent",
@@ -377,9 +376,9 @@ async function addExampleTasks() {
             "title": "Entwicklung einer Dashboard-Ansicht",
             "description": "Erstellung einer Übersichtsseite für Administratoren",
             "contacts": [
-                "David Eisenberg",
-                "Anton Mayer",
-                "Marcel Bauer"
+                "Ava Garcia",
+                "Sophia Rossi",
+                "Liam Brown"
             ],
             "dueDate": "2024-06-01",
             "priority": "low",
@@ -401,9 +400,9 @@ async function addExampleTasks() {
             "title": "Implementierung von OAuth-Authentifizierung",
             "description": "Integration von OAuth-Authentifizierung für externe Plattformen",
             "contacts": [
-                "Tim Testing",
-                "Anton Mayer",
-                "Benedikt Ziegler"
+                "Mohammed Ali",
+                "Charlotte Kim",
+                "Liam Brown"
             ],
             "dueDate": "2024-06-05",
             "priority": "medium",
@@ -425,9 +424,9 @@ async function addExampleTasks() {
             "title": "Erstellung eines Testplans",
             "description": "Ausarbeitung eines detaillierten Plans für die Anwendungstests",
             "contacts": [
-                "Marcel Bauer",
-                "Benedikt Ziegler",
-                "Eva Fischer"
+                "Oliver Russo",
+                "Amelia Patel",
+                "Eva Schmidt"
             ],
             "dueDate": "2024-06-10",
             "priority": "low",
@@ -444,8 +443,120 @@ async function addExampleTasks() {
                 }
             ]
         }
-    ];    
+    ];
     await setItem('tasks', JSON.stringify(tasks));
     let test = JSON.parse(await getItem('tasks'));
+    console.log(test);
+}
+
+async function addExampleContacts() {
+    let contactList = [
+        {
+            "name": "Emily Davis",
+            "mail": "emily.davis@example.com",
+            "phone": "+12025551234"
+        },
+        {
+            "name": "Mohammed Ali",
+            "mail": "mohammed.ali@example.com",
+            "phone": "+966555555555"
+        },
+        {
+            "name": "Sophia Rossi",
+            "mail": "sophia.rossi@example.com",
+            "phone": "+390123456789"
+        },
+        {
+            "name": "Chen Wei",
+            "mail": "chen.wei@example.com",
+            "phone": "+8613812345678"
+        },
+        {
+            "name": "Luca Ferrari",
+            "mail": "luca.ferrari@example.com",
+            "phone": "+390987654321"
+        },
+        {
+            "name": "Hannah Kim",
+            "mail": "hannah.kim@example.com",
+            "phone": "+821012345678"
+        },
+        {
+            "name": "Mikhail Ivanov",
+            "mail": "mikhail.ivanov@example.com",
+            "phone": "+79123456789"
+        },
+        {
+            "name": "Isabella Martinez",
+            "mail": "isabella.martinez@example.com",
+            "phone": "+521234567890"
+        },
+        {
+            "name": "Eva Schmidt",
+            "mail": "eva.schmidt@example.com",
+            "phone": "+491234567890"
+        },
+
+        {
+            "name": "Liam Brown",
+            "mail": "liam.brown@example.com",
+            "phone": "+12025551234"
+        },
+        {
+            "name": "Sophie Wilson",
+            "mail": "sophie.wilson@example.com",
+            "phone": "+447777777777"
+        },
+        {
+            "name": "Yusuf Khan",
+            "mail": "yusuf.khan@example.com",
+            "phone": "+923001234567"
+        },
+        {
+            "name": "Ava Garcia",
+            "mail": "ava.garcia@example.com",
+            "phone": "+12025559999"
+        },
+        {
+            "name": "Ethan Lee",
+            "mail": "ethan.lee@example.com",
+            "phone": "+12025558888"
+        },
+        {
+            "name": "Charlotte Kim",
+            "mail": "charlotte.kim@example.com",
+            "phone": "+821012345678"
+        },
+        {
+            "name": "Noah Nguyen",
+            "mail": "noah.nguyen@example.com",
+            "phone": "+84123456789"
+        },
+        {
+            "name": "Amelia Patel",
+            "mail": "amelia.patel@example.com",
+            "phone": "+918888888888"
+        },
+        {
+            "name": "Oliver Russo",
+            "mail": "oliver.russo@example.com",
+            "phone": "+390123456789"
+        },
+        {
+            "name": "Emma Ali",
+            "mail": "emma.ali@example.com",
+            "phone": "+966555555555"
+        }
+    ];
+    await setItem('contactList', JSON.stringify(contactList));
+    let test = JSON.parse(await getItem('contactList'));
+    console.log(test);
+}
+
+async function deleteAllContactsEmergencyFunction() {
+    // tasks = JSON.parse(await getItem('tasks'));
+    let contactList = [];
+    await setItem('contactList', JSON.stringify(contactList));
+    let test = JSON.parse(await getItem('contactList'));
     console.log(test);
 }
