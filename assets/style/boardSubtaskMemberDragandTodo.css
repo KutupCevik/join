@@ -23,13 +23,13 @@
 }
 
 .drag-area {
-    height: calc(100vh - 334px);
+    /* height: calc(100vh - 334px); */
     background-color: rgba(247, 247, 247, 0.1);
     width: 278px;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    overflow: hidden;
+    overflow: auto;
     scrollbar-width: thin;
     scrollbar-color: rgba(0, 207, 239, 0.3) transparent;
 }
